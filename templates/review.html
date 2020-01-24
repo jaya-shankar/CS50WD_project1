@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+    <h1>Books.com</h1>
+
+    <ul>
+        {% for review in reviews %}
+            <li>
+                <div style =" width: 500px; height: 150px; border: 1px solid blue;">
+                    <p><b>Title</b>: {{review.title}}</p>
+                    <p><b>Rating</b>: {{review.rating}}</p>
+                    <p><b>Comment</b>: {{review.comment}}</p>
+
+                    <p><a href="/book/{{review.book_id}}">Go to the book</a></p>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+    <form method="get">
+        <div><button class="btn btn-primary" type="back" formaction="/">Go Back</button></div>
+        <div><button class="btn btn-primary" type="logout" formaction="/login">Logout</button></div>
+    </form>
+</html>

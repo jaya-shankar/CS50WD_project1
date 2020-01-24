@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+    <h1>Books.com</h1>
+
+    <form action="/book/{{book.book_id}}" method="post">
+    <div>
+        <p><b>ISBN</b>= {{book.isbn}}</p>
+        <p><b>Title</b>= {{book.title}}</p>
+        <p><b>Author</b>= {{book.author}}</p>
+        <p><b>Year Published</b>= {{book.year}}</p>
+        <p><b>GoodReads  no of Ratings recevied:</b> {{goodreads.ratings_count}}</p>
+        <p><b>GoodReads Rating: </b>{{goodreads.average}}</p>
+        <p><h3>REVIEWS:</h3></p>    
+
+        {% for review in reviews %}
+                    <li>
+                            <p>{{review.username}} ::: {{review.rating}}</p>
+                            <p style="border:3px; border-style:solid; border-color:#FF0000; padding: 1em;">{{review.comment}}</p>
+    
+                    </li>
+                {% endfor %}
+        <div class="form-group">
+            <textarea rows="10" cols="30" autocomplete="off" autofocus class="form-control" name="review" placeholder="your comments" type="text"></textarea>
+            <input type="radio" name="rating" value="1" checked> 1
+            <input type="radio" name="rating" value="2"> 2
+            <input type="radio" name="rating" value="3"> 3
+            <input type="radio" name="rating" value="4" checked> 4
+            <input type="radio" name="rating" value="5"> 5
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+    </div>
+    </form>
+    <form method="get">
+        <div><button class="btn btn-primary" type="back" formaction="/result">Go Back</button></div>
+        <div><button class="btn btn-primary" type="logout" formaction="/login">Logout</button></div>
+    </form>
+</html>

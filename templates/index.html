@@ -1,0 +1,18 @@
+
+<!DOCTYPE html>
+    <h1>Books.com</h1>
+
+
+    <p>username: <b>{{user.username}}</b></p>
+    <form action="/" method="post">
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="search" placeholder="search" type="text"/>
+
+                <button class="btn btn-primary" type="submit">Search</button>
+            </div>
+    </form>
+    <form action="/login" method="get">
+        <button class="btn btn-primary" type="logout">Logout</button>
+        <button class="btn btn-primary" type="reviews" formaction="/review">My Reviews</button>
+    </form>
+</html>
